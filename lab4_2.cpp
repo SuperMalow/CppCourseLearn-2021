@@ -2,13 +2,23 @@
 #include <string>
 using namespace std;
 
-enum CPU_Rank { P1=1, P2, P3, P4, P5, P6, P7};
+enum CPU_Rank
+{
+    P1 = 1,
+    P2,
+    P3,
+    P4,
+    P5,
+    P6,
+    P7
+};
 class CPU
 {
 private:
     CPU_Rank rank;
     int frquency;
     float voltage;
+
 public:
     CPU(/* args */)
     {
@@ -26,7 +36,6 @@ public:
     {
         cout << "CPU Stop !!!!!!" << endl;
     }
-    
 };
 
 class RAM
@@ -34,6 +43,7 @@ class RAM
 private:
     string RamCapacity;
     string RamLength;
+
 public:
     RAM(/* args */)
     {
@@ -57,6 +67,7 @@ class CDROM
 {
 private:
     string CdromLength;
+
 public:
     CDROM(/* args */)
     {
@@ -82,11 +93,14 @@ private:
     CPU cpu;
     RAM ran;
     CDROM cdrom;
+
 public:
-    Computer(/* args */){
+    Computer(/* args */)
+    {
         cout << "Computer-->构造函数的调用" << endl;
     }
-    ~Computer(){
+    ~Computer()
+    {
         cout << "Computer-->析构函数的调用" << endl;
     }
     void ComputerRun()
@@ -99,10 +113,11 @@ public:
     }
 };
 
-int main(){
+int main()
+{
 
     Computer c;
-    
+
     system("pause");
     return 0;
 }
