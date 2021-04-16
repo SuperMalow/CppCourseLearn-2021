@@ -2,7 +2,14 @@
 #include <string>
 #include <math.h>
 using namespace std;
-//#define PI = 3.14;
+/*
+4/16 ½ñÈÕ¼òµ¥Ð´ÁË¼¸¸ö¼ÆËãÊ½×Ó
+items:
+1.¿ÉÊÓ»¯½çÃæ
+2.ÊäÈëÒÑÖªÖµ ÇóÄÜÇó³öÀ´µÄÖµ
+3.¿ÉÑ¡Ôñµ¥Î»
+
+*/
 
 class HighFrequency
 {
@@ -24,31 +31,40 @@ public:
         */
     }
     double calculateResonFrequency(double L, double C);
-    void calculateResonResistor(double &L, double &C, double &r);
-    void calculateCap(double &L, double &resonFrequency);
+    int calculateResonResistor(double L, double C, double r);
+    int calculateCap(double L, double resonFrequency);
 
 };
 double HighFrequency::calculateResonFrequency(double L, double C)
 {
-        return (1 / 2 * PI * (sqrt((L * C))));
+    //¼ÆËãÐ³ÕñÆµÂÊ
+    return (1.0 / (2.0 * PI * (sqrt(L * C))));
 }
-void HighFrequency::calculateResonResistor(double &L, double &C, double &r)
+int HighFrequency::calculateResonResistor(double L, double C, double r)
 {
+    //ÒÑÖªµç¸Ð¡¢µçÈÝ¡¢µç¸Ð ¼ÆËãÄÚ×è¼ÆËãÐ³Õñµç×è L / r * C
+    return (L / r * C);
+
 }
-void HighFrequency::calculateCap(double &L, double &resonFrequency)
+int HighFrequency::calculateCap(double L, double resonFrequency)
 {
+    //ÒÑÖªµç¸Ð¡¢Ð³ÕñÆµÂÊ ¼ÆËãµçÈÝ C = 1 / pow((2 * PI * f0),2) * L
+    return (1 / pow((2 * PI * resonFrequency),2) * L);
 }
+
+
+
 void test()
 {
     HighFrequency h;
     double resonFrequency, L, C, Rp, r;
     cin >> L >> C ;
-    cout << "å€¼ä¸ºï¼š" << h.calculateResonFrequency(L,C) << endl;
+    cout << "ÖµÎª£º" << h.calculateResonFrequency(L,C) << endl;
 }
 
 int main()
 {
-
+    test();
     system("pause");
     return 0;
 }
