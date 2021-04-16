@@ -16,29 +16,28 @@ public:
 
 Rabbit::Rabbit(string _name,const char * pf)
 {
-    cout << "è°ƒç”¨æž„é€ å‡½æ•°" << endl;
+    cout << "µ÷ÓÃ¹¹Ôìº¯Êý" << endl;
     this->_name = _name;
     this->_food = new char[50];
-    memset(this->_food,0,50);   //è¿™é‡Œæ˜¯åˆå§‹åŒ–foodçš„ç©ºé—´
+    memset(this->_food,0,50);   //ÕâÀïÊÇ³õÊ¼»¯foodµÄ¿Õ¼ä
     strcpy(this->_food,pf);
 }
 
 Rabbit::~Rabbit()
 {
-    cout << "è°ƒç”¨æžæž„å‡½æ•°, æžæž„æŽ‰äº†" << this->_name << endl;
+    cout << "µ÷ÓÃÎö¹¹º¯Êý, Îö¹¹µôÁË" << this->_name << endl;
 }
 
 void Rabbit::eat()
 {
-    cout << this->_name << "æ­£åœ¨åƒ" << this->_food << endl;
+    cout << this->_name << "ÕýÔÚ³Ô" << this->_food << endl;
 }
-
 
 int main()
 {
-    Rabbit A("å°ç™½å…”A","èåœ");
+    Rabbit A("Ð¡°×ÍÃA","ÂÜ²·");
     A.eat();
-    Rabbit B("å°ç™½å…”B","ç™½èœ");
+    Rabbit B("Ð¡°×ÍÃB","°×²Ë");
     B.eat();
 
     system("pause");
