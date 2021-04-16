@@ -8,33 +8,42 @@ class HighFrequency
 {
 private:
     /* data */
-    double resonFrequency, L, C, Rp, r;
+    double _resonFrequency, _L, _C, _Rp, _r;
+    double PI;
 
 public:
     HighFrequency()
     {
-        double resonFrequency = 5000;
-        double L = 0.0001;
-        double C = 0.0001;
-        double Rp = 500;
-        double r = 2;
+        PI = 3.14159;
+        /*
+        double _resonFrequency = 5000;
+        double _L = 0.0001;
+        double _C = 0.0001;
+        double _Rp = 500;
+        double _r = 2;
+        */
     }
-    double calculateResonFrequency(double &L, double &C)
-    {
-        return (1 / 2 * 3.14 * (sqrt((L * C))));
-    }
-    void calculateResonResistor(double &L, double &C, double &r)
-    {
-    }
-    void calculateCap(double &L, double &resonFrequency)
-    {
-    }
-};
+    double calculateResonFrequency(double L, double C);
+    void calculateResonResistor(double &L, double &C, double &r);
+    void calculateCap(double &L, double &resonFrequency);
 
+};
+double HighFrequency::calculateResonFrequency(double L, double C)
+{
+        return (1 / 2 * PI * (sqrt((L * C))));
+}
+void HighFrequency::calculateResonResistor(double &L, double &C, double &r)
+{
+}
+void HighFrequency::calculateCap(double &L, double &resonFrequency)
+{
+}
 void test()
 {
     HighFrequency h;
-    cout << "值为：" << h.calculateResonFrequency(0.001, 0.005) << endl;
+    double resonFrequency, L, C, Rp, r;
+    cin >> L >> C ;
+    cout << "值为：" << h.calculateResonFrequency(L,C) << endl;
 }
 
 int main()
