@@ -1,7 +1,11 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+/*
+这属于浅拷贝
+新对象的指针成员指向原有对象的指针指向的空间
+它并没有为新对象申请新的内存空间
+*/
 class Sheep
 {
 private:
@@ -39,6 +43,7 @@ void test()
 {
     Sheep mie1("懒羊羊","白色");
     mie1.eat();
+    //cout << mie1
     Sheep mie2(mie1);
     mie2.eat();
 
