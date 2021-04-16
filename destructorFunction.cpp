@@ -26,6 +26,8 @@ Rabbit::Rabbit(string _name,const char * pf)
 Rabbit::~Rabbit()
 {
     cout << "调用析构函数, 析构掉了" << this->_name << endl;
+    if (this->_food != NULL)
+        delete []this->_food; //创建完最后销毁时需要del掉
 }
 
 void Rabbit::eat()
