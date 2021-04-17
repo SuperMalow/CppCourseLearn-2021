@@ -9,16 +9,17 @@ private:
     int year;
     int moth;
     int day;
+
 public:
     dayTime()
     {
-        cout << "dayTime-->æ„é€ å‡½æ•°çš„è°ƒç”¨" << endl;
+        cout << "dayTime-->¹¹Ôìº¯ÊıµÄµ÷ÓÃ" << endl;
     }
     ~dayTime()
     {
-        cout << "dayTime-->ææ„å‡½æ•°çš„è°ƒç”¨" << endl;
+        cout << "dayTime-->Îö¹¹º¯ÊıµÄµ÷ÓÃ" << endl;
     }
-    //æˆå‘˜å±æ€§çš„è®¾ç½®
+    //³ÉÔ±ÊôĞÔµÄÉèÖÃ
     void setBirthdayYear(int y)
     {
         year = y;
@@ -31,7 +32,7 @@ public:
     {
         day = d;
     }
-    //æˆå‘˜å±æ€§çš„è·å–
+    //³ÉÔ±ÊôĞÔµÄ»ñÈ¡
     int getBirthdayYear()
     {
         return year;
@@ -46,62 +47,68 @@ public:
     }
 };
 
-
-
 class People
 {
 private:
     string number;
     bool sex;
     dayTime britday;
-    string id; 
+    string id;
+
 public:
     People(/* args */)
     {
-        cout << "People-->æ„é€ å‡½æ•°çš„è°ƒç”¨" << endl;
+        cout << "People-->¹¹Ôìº¯ÊıµÄµ÷ÓÃ" << endl;
+    }
+    People(int youcan)
+    {
+
+        cout << "People-->ÓĞ²Î¹¹Ôìº¯ÊıµÄµ÷ÓÃ" << endl;
     }
     ~People()
     {
-        cout << "People-->ææ„å‡½æ•°çš„è°ƒç”¨" << endl;
+        cout << "People-->Îö¹¹º¯ÊıµÄµ÷ÓÃ" << endl;
     }
-    //Peopleç±»çš„åˆå§‹åŒ–
+    People(const People &p)
+    {
+        cout << "People-->¿½±´¹¹Ôìº¯ÊıµÄµ÷ÓÃ" << endl;
+    }
+    //PeopleÀàµÄ³õÊ¼»¯
     void setPeopleNum()
     {
-        cout << "è¯·è¾“å…¥äººå‘˜çš„ç¼–å·ï¼š" ;
+        cout << "ÇëÊäÈëÈËÔ±µÄ±àºÅ£º";
         cin >> number;
     }
     void setPeoplesex()
     {
-        cout << "è¯·è¾“å…¥äººå‘˜çš„æ€§åˆ«(1--ä¸ºå¥³ 2--ä¸ºç”·)ï¼š" ;
+        cout << "ÇëÊäÈëÈËÔ±µÄĞÔ±ğ(1--ÎªÅ® 2--ÎªÄĞ)£º";
         cin >> sex;
     }
     void setPeopleBirthday()
     {
-        int p_year,p_moth,p_day;
-        cout << "è¯·è¾“å…¥äººå‘˜çš„å‡ºç”Ÿæ—¥æœŸå¹´ä»½ï¼š" ;
+        int p_year, p_moth, p_day;
+        cout << "ÇëÊäÈëÈËÔ±µÄ³öÉúÈÕÆÚÄê·İ£º";
         cin >> p_year;
         britday.setBirthdayYear(p_year);
-        cout << "è¯·è¾“å…¥äººå‘˜çš„å‡ºç”Ÿæ—¥æœŸæœˆä»½ï¼š" ;
+        cout << "ÇëÊäÈëÈËÔ±µÄ³öÉúÈÕÆÚÔÂ·İ£º";
         cin >> p_moth;
         britday.setBirthdayMoth(p_moth);
-        cout << "è¯·è¾“å…¥äººå‘˜çš„å‡ºç”Ÿæ—¥æœŸæ—¥å­ï¼š" ;
+        cout << "ÇëÊäÈëÈËÔ±µÄ³öÉúÈÕÆÚÈÕ×Ó£º";
         cin >> p_day;
         britday.setBirthdayDay(p_day);
     }
     void setPeopleId()
     {
-        cout << "è¯·è¾“å…¥äººå‘˜çš„èº«ä»½è¯å·ï¼š";
+        cout << "ÇëÊäÈëÈËÔ±µÄÉí·İÖ¤ºÅ£º";
         cin >> id;
     }
-    //æˆå‘˜å±æ€§çš„è¾“å‡º
+    //³ÉÔ±ÊôĞÔµÄÊä³ö
     void PeopleInofo()
     {
-        cout << "ç¼–å·ï¼š" << number << endl;
-        cout << "æ€§åˆ«ï¼š" << (sex==1?"å¥³":"ç”·") << endl;
-        cout << "å‡ºç”Ÿæ—¥æœŸï¼š" << britday.getBirthdayYear() << "-" <<
-        britday.getBirthdayMoth() << "-" <<
-        britday.getBirthdayDay() << endl;
-        cout << "èº«ä»½è¯ï¼š" << id << endl;
+        cout << "±àºÅ£º" << number << endl;
+        cout << "ĞÔ±ğ£º" << (sex == 1 ? "Å®" : "ÄĞ") << endl;
+        cout << "³öÉúÈÕÆÚ£º" << britday.getBirthdayYear() << "-" << britday.getBirthdayMoth() << "-" << britday.getBirthdayDay() << endl;
+        cout << "Éí·İÖ¤£º" << id << endl;
     }
     void setPeople(People &p)
     {
@@ -110,14 +117,20 @@ public:
         p.setPeopleBirthday();
         p.setPeopleId();
     }
-
 };
-
-int main(){
+void test()
+{
+    //²é¿´µ÷ÓÃ¿½±´¹¹Ôìº¯Êı
+    People a1(2);
+    People a2(a1);
+}
+int main()
+{
+    //test();
     People p;
+    People p1(p);
     p.setPeople(p);
     p.PeopleInofo();
-
     system("pause");
     return 0;
 }
