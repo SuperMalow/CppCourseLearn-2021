@@ -43,7 +43,6 @@ void test()
 {
     Sheep mie1("ÀÁÑòÑò","°×É«");
     mie1.eat();
-    //cout << mie1
     Sheep mie2(mie1);
     mie2.eat();
 
