@@ -12,16 +12,25 @@ private:
     string m_city;
 public:
     //姓名、街道、邮编、城市
-    Employee(string name,string address,int code,string city);
+    Employee();
     void dispaly();
+    void setInfo(string name,string address,int code,string city);
 };
 
-Employee::Employee(string name,string address,int code,string city)
-:m_name(name),
-streetAddress(address),
-postCode(code),
-m_city(city)
+Employee::Employee()
+:m_name("张三"),
+streetAddress("柳洲东路站"),
+postCode(010101),
+m_city("南京")
 {}
+void Employee::setInfo(string name,string address,int code,string city)
+{
+    this->m_name = name;
+    this->streetAddress = address;
+    this->postCode = code;
+    this->m_city = city;
+    //return *this;
+}
 
 void Employee::dispaly()
 {
@@ -33,21 +42,21 @@ void Employee::dispaly()
 
 void test()
 {
-    Employee a[2] = {{"张三","柳洲东路",00100,"南京"},
-    {"李四","浮桥",00200,"南京"}};
+    Employee *a = new Employee[2];
+    a[0].setInfo("张三","学府路",010101,"南京市浦口区");
+    a[1].setInfo("李四","应天大道",020202,"南京市");
+
     for (int i = 0; i < 2; i++)
     {
         a[i].dispaly();
     }
-    
+    delete[] a;
 }
 
 
 int mian()
 {
-
-
-
+    test();
     system("pause");
     return 0;
 }
