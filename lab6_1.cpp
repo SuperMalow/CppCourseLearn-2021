@@ -1,45 +1,60 @@
 #include <iostream>
 using namespace std;
 
-
-//ç¼–å†™å¹¶æµ‹è¯•3*3çŸ©é˜µè½¬ç½®å‡½æ•°ï¼Œä½¿ç”¨æ•°ç»„ä¿å­˜3*3çŸ©é˜µ
-void matrixSpositon(int matri[][3])
+//ÔªËØÖµµÄ¶Ôµ÷
+void swap(int &a,int &b)
 {
-    int Copymatri[3][3];
-    for (int i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < 3; j++)
-        {
-            matri[i][j] = matri[i][j+1];
-        }
-        
-    }
-    
-
+    int temp = a;
+    a = b;
+    b = temp;
 }
-
-
-void test()
+//¿ªÊ¼×ªÖÃ
+void matrixSpositon(int matrix[3][3])
 {
-    int mtix[3][3] = {
-        {1,2,3},
-        {4,5,6},
-        {7,8,9}
-    };
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < i; i++)
+        {
+            swap(matrix[i][j],matrix[j][i]);
+        }
+    }
+}
+//Êä³öÊı×é
+void ShowInfo(int matrix[3][3])
+{
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
         {
-            cout << mtix[i][j] << "  ";
+            cout << matrix[i][j] << "  ";
         }
         cout << endl;
     }
 }
+//Êı×éµÄ³õÊ¼»¯Óë×ªÖÃ
+void matrixInit()
+{
+    //³õÊ¼»¯
+    static int matrix[3][3];
+    cout << "ÇëÊäÈë9¸öÕûÊı" << endl;
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            cin >> matrix[i][j];
+        }
+    }
+    //Êä³öÒ»±éÊäÈëµÄÊı×é
+    ShowInfo(matrix);
+    //¿ªÊ¼×ªÖÃ
+    matrixSpositon(matrix);
+    //Êä³ö×ªÖÃºóµÄÊı×é
+    ShowInfo(matrix);
+}
 
 int main()
 {
-    test();
-
+    matrixInit();
     system("pause");
     return 0;
 }
