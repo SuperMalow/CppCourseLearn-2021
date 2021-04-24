@@ -13,7 +13,7 @@ void matrixSpositon(int matrix[3][3])
 {
     for (int i = 0; i < 3; i++)
     {
-        for (int j = 0; j < i; i++)
+        for (int j = 0; j < i; j++)
         {
             swap(matrix[i][j],matrix[j][i]);
         }
@@ -35,7 +35,8 @@ void ShowInfo(int matrix[3][3])
 void matrixInit()
 {
     //初始化
-    static int matrix[3][3];
+    //int * (matrix)[3] = new int[3][3];
+    int matrix[3][3];
     cout << "请输入9个整数" << endl;
     for (int i = 0; i < 3; i++)
     {
