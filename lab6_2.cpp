@@ -1,20 +1,71 @@
 #include <iostream>
 using namespace std;
 
-//ä½¿ç”¨åŠ¨æ€å†…å­˜åˆ†é…ç”ŸæˆåŠ¨æ€æ•°ç»„æ¥å®Œæˆlab6_1 å¹¶ä¸”ä½¿ç”¨æŒ‡é’ˆå®ç°å‡½æ•°åŠŸèƒ½ã€‚
-//ä½¿ç”¨newåœ¨å †åŒºåˆ›å»ºå†…å­˜
-void mkdirarray()
+//ÔªËØÖµµÄ¶Ôµ÷
+void swap(int &a,int &b)
 {
-
-
+    int temp = a;
+    a = b;
+    b = temp;
 }
+//¿ªÊ¼×ªÖÃ
+void arrSpositon(int **arr)
+{
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            swap(arr[i][j],arr[j][i]);
+        }
+        
+    }
+}
+//Êä³öÊı×é
+void ShowInfo(int **arr)
+{
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            cout << arr[i][j] << "  ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+//Êı×éµÄ³õÊ¼»¯
+void arrInit()
+{
+    //ÔÚ¶ÑÇøÉêÇëÒ»¿éÄÚ´æ
+    int **arr = new int*[3];
 
+    for (int i = 0; i < 3; i++)
+    {
+       arr[i] = new int[3];
+    }
+    cout << "ÇëÊäÈë9¸öÕûÊı" << endl;
+    for (int j = 0; j < 3; j++)
+    {
+        for (int jj = 0; jj < 3; jj++)
+        {
+            cin >> arr[j][jj];
+        }
+    }
+    //Êä³öÒ»±ßÊäÈë¹ıµÄÊı×é
+    cout << "ÊäÈëµÄÊı×éÎª£º" << endl;
+    ShowInfo(arr);
+    //¿ªÊ¼×ªÖÃ
+    arrSpositon(arr);
+    //Êä³ö×ªÖÃºóµÄ½á¹û
+    cout << "¶¯Ì¬ÄÚ´æ·ÖÅäÊı×é-->×ªÖÃºóÎª£º" << endl;
+    ShowInfo(arr);
+    delete[] arr;
+}
 
 
 int main()
 {
-
-
+    arrInit();
     system("pause");
     return 0;
 }

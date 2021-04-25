@@ -35,7 +35,6 @@ void ShowInfo(int matrix[3][3])
 void matrixInit()
 {
     //初始化
-    //int * (matrix)[3] = new int[3][3];
     int matrix[3][3];
     cout << "请输入9个整数" << endl;
     for (int i = 0; i < 3; i++)
