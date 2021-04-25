@@ -2,30 +2,28 @@
 using namespace std;
 
 //编程实现两个字符串的连接。(手写)
-void strLianJie(char *p1,char *p2)
+char* strLianJie(char *p1,char *p2)
 {
-    int len1 = sizeof(p1) / sizeof(char);
-    int len2 = sizeof(p2) / sizeof(char);
-    char temp[len1+len2];
-    for (int i = 0; i < len1; i++)
+    int i = 0,j = 0;
+    while (p1[i] != '\0')
     {
-        temp[i] = p1[i];
+        i++;
     }
-    for (int  j = 0; j < len2; j++)
+    while (p2[j] != 0)
     {
-        temp[j] = p2[j];
+        p1[i] = p2[j];
+        i++;
+        j++;
     }
-    
-    //return temp;
+    p1[i] = '\0';
+    return p1;
 }
-
 
 int main()
 {
     char p1[] = "Hello";
     char p2[] = "World";
     strLianJie(p1,p2);
-
-    system("pause");
+    cout << p1 << endl;
     return 0;
 }
