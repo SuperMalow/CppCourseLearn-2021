@@ -46,10 +46,12 @@ void matrixInit()
         }
     }
     //输出一遍输入的数组
+    cout << "输入的数组为：" << endl;
     ShowInfo(matrix);
     //开始转置
     matrixSpositon(matrix);
     //输出转置后的数组
+    cout << "转置后的数组为：" << endl;
     ShowInfo(matrix);
 }
 

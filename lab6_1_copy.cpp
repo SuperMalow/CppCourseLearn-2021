@@ -36,7 +36,6 @@ int main()
         {
             swap(matrix[i][j],matrix[j][i]);
         }
-        
     }
     //Êä³ö
     cout << "×ªÖÃµÄ£º" <<endl;
