@@ -59,7 +59,7 @@ void arrInit()
     //输出转置后的结果
     cout << "动态内存分配数组-->转置后为：" << endl;
     ShowInfo(arr);
-    delete[] arr;
+    delete[] arr; //在堆区申请的空间要释放掉。
 }
 
 
