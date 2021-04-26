@@ -14,6 +14,7 @@ private:
 public:
     //姓名、街道、邮编、城市
     Employee(string name,string address,int code,string city);
+    void chang_name(string name);
     void dispaly();
 };
 
@@ -31,12 +32,20 @@ void Employee::dispaly()
     cout << "街道:  " << this->streetAddress << endl;
     cout << "邮编:  " << this->postCode << endl;
 }
+void Employee::chang_name(string name)
+{
+    this->m_name = name;
+
+}
 
 void test()
 {
     Employee e1("张三","柳洲东路",00100,"南京");
     e1.dispaly();
-}
+    e1.chang_name("李四");
+    cout << "------修改后------" << endl;
+    e1.dispaly();
+}   
 
 int main()
 {
