@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-//ç¼–ç¨‹å®ç°ä¸¤ä¸ªå­—ç¬¦ä¸²çš„è¿æ¥ã€‚(æ‰‹å†™)
+//±à³ÌÊµÏÖÁ½¸ö×Ö·û´®µÄÁ¬½Ó¡£(ÊÖĞ´)
 char* strLianJie(char *p1,char *p2)
 {
     int i = 0,j = 0;
@@ -19,11 +19,22 @@ char* strLianJie(char *p1,char *p2)
     return p1;
 }
 
+void test()
+{
+    char p1[100];
+    char p2[50];
+    cout << "ÇëÊäÈëµÚÒ»¸ö×Ö·û´®£º" << endl;
+    cin >> p1;
+    cout << "ÇëÊäÈëµÚ¶ş¸ö×Ö·û´®£º" << endl;
+    cin >> p2;
+    strLianJie(p1,p2);
+    cout << "Á¬½ÓºóµÄ×Ö·û´®Îª:  " << p1 << endl;
+
+}
+
 int main()
 {
-    char p1[] = "Hello";
-    char p2[] = "World";
-    strLianJie(p1,p2);
-    cout << p1 << endl;
+    test();
+    system("pause");
     return 0;
 }
