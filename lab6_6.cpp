@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
+#include <string>
 
-//å£°æ˜ä¸€ä¸ªEmployeeç±»åŒ…æ‹¬å§“åã€è¡—é“åœ°å€ã€åŸå¸‚å’Œé‚®ç¼–
-//change_name()ä¿®æ”¹å¯¹è±¡åå­—ã€display()æ˜¾ç¤ºå§“ååœ°å€åŸå¸‚å’Œé‚®ç¼–
+//ÉùÃ÷Ò»¸öEmployeeÀà°üÀ¨ĞÕÃû¡¢½ÖµÀµØÖ·¡¢³ÇÊĞºÍÓÊ±à
+//change_name()ĞŞ¸Ä¶ÔÏóÃû×Ö¡¢display()ÏÔÊ¾ĞÕÃûµØÖ·³ÇÊĞºÍÓÊ±à
 class Employee
 {
 private:
@@ -11,52 +12,56 @@ private:
     int postCode;
     string m_city;
 public:
-    //å§“åã€è¡—é“ã€é‚®ç¼–ã€åŸå¸‚
-    Employee();
+    //ĞÕÃû¡¢½ÖµÀ¡¢ÓÊ±à¡¢³ÇÊĞ
+    Employee(string name,string address,int code,string city);
+    void chang_name(string name);
     void dispaly();
-    void setInfo(string name,string address,int code,string city);
 };
 
-Employee::Employee()
-:m_name("å¼ ä¸‰"),
-streetAddress("æŸ³æ´²ä¸œè·¯ç«™"),
-postCode(010101),
-m_city("å—äº¬")
+Employee::Employee(string name,string address,int code,string city)
+:m_name(name),
+streetAddress(address),
+postCode(code),
+m_city(city)
 {}
-void Employee::setInfo(string name,string address,int code,string city)
-{
-    this->m_name = name;
-    this->streetAddress = address;
-    this->postCode = code;
-    this->m_city = city;
-    //return *this;
-}
 
 void Employee::dispaly()
 {
-    cout << "å§“åï¼š " << this->m_name << endl;
-    cout << "åŸå¸‚ï¼š " << this->m_city << endl;
-    cout << "è¡—é“:  " << this->streetAddress << endl;
-    cout << "é‚®ç¼–:  " << this->postCode << endl;
+    cout << "ĞÕÃû£º " << this->m_name << endl;
+    cout << "³ÇÊĞ£º " << this->m_city << endl;
+    cout << "½ÖµÀ:  " << this->streetAddress << endl;
+    cout << "ÓÊ±à:  " << this->postCode << endl;
+}
+void Employee::chang_name(string name)
+{
+    this->m_name = name;
+
 }
 
 void test()
 {
-    Employee *a = new Employee[2];
-    a[0].setInfo("å¼ ä¸‰","å­¦åºœè·¯",010101,"å—äº¬å¸‚æµ¦å£åŒº");
-    a[1].setInfo("æå››","åº”å¤©å¤§é“",020202,"å—äº¬å¸‚");
-
-    for (int i = 0; i < 2; i++)
+    Employee e1("ÕÅÈı","ÁøÖŞ¶«Â·",00100,"ÄÏ¾©");
+    e1.dispaly();
+    Employee e[5] = {
+        Employee ("ÕÅÈı","ÁøÖŞ¶«Â·001ºÅ",00101,"ÄÏ¾©"),
+        Employee ("ÀîËÄ","ÁøÖŞ¶«Â·002ºÅ",00102,"ÄÏ¾©"),
+        Employee ("ÍõÎå","ÁøÖŞ¶«Â·003ºÅ",00103,"ÄÏ¾©"),
+        Employee ("ÕÔÁù","ÁøÖŞ¶«Â·004ºÅ",00104,"ÄÏ¾©"),
+        Employee ("ËïÆß","ÁøÖŞ¶«Â·005ºÅ",00105,"ÄÏ¾©")
+    };
+    cout << endl;
+    for (int i = 0; i < 5; i++)
     {
-        a[i].dispaly();
+        cout << "¶ÔÏó " << i+1 << "£º" << endl;
+        e[i].dispaly();
     }
-    delete[] a;
-}
+    
+}   
 
-
-int mian()
+int main()
 {
     test();
+
     system("pause");
     return 0;
 }
