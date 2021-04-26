@@ -6,13 +6,13 @@ using namespace std;
 class DayTime
 {
 private:
-    /* data */
+    
 public:
-    DayTime(/* args */);
+    DayTime();
     ~DayTime();
 };
 
-DayTime::DayTime(/* args */)
+DayTime::DayTime()
 {
 }
 
