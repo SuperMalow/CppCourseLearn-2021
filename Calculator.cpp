@@ -3,47 +3,84 @@
 
 using namespace std;
 
-class Calculator
+//真实开发 提倡开闭原则
+//开闭原则，对扩展进行开发，对修改进行关闭。
+//利用多态来编写
+
+
+
+//利用多态实现计算器
+//实现计算器的抽象类别
+class AbstractCalculator
 {
-    //对象重载
-
-
+private:
+    /* data */
 public:
-    int getResult(string oper)
-    {
-        if  (oper == "+")
-        {
-            return (m_num1 + m_num2);
-        }
-        else if (oper == "-")
-        {
-            return (m_num1 - m_num2);
-        }
-        else if (oper == "*")
-        {
-            return (m_num1 * m_num2);
-        }
-        else
-        {
-            return m_num1;
-        }
-    }
-    int m_num1;
-    int m_num2;
 
+    virtual int getResult()
+    {
+        return 0;
+    }
+    
+    int m_Num1;
+    int m_Num2;
 };
+//加法计算器
+class AddCalculator :public AbstractCalculator
+{
+private:
+public:
+    int getResult()
+    {
+        return m_Num1 + m_Num2;
+    }
+};
+
+//减法计算器
+class SubCalculator :public AbstractCalculator
+{
+private:
+    /* data */
+public:
+    int getResult()
+    {
+        return m_Num1 - m_Num2;
+    }
+};
+
+//乘法计算器
+class ChengCalculator :public AbstractCalculator
+{
+private:
+public:
+    int getResult()
+    {
+        return m_Num1 * m_Num2;
+    }
+}; 
+
+//除法计算器
+class ChuCalculator :public AbstractCalculator
+{
+private:
+    
+public:
+    int getResult()
+    {
+        return m_Num1 / m_Num2;
+    }
+};
+
+
 
 void test()
 {
-    Calculator c;
-    c.m_num1 = 10;
-    c.m_num2 = 20;
 
-    cout << c.m_num1 << " + " << c.m_num2 << " = " << c.getResult("+") << endl; 
+
+
 }
 
-
-int main()
+int main()  
 {
 
     test();
