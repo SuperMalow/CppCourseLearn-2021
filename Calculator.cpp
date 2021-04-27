@@ -5,7 +5,7 @@ using namespace std;
 
 //真实开发 提倡开闭原则
 //开闭原则，对扩展进行开发，对修改进行关闭。
-//利用多态来编写
+//多态设计程序架构有利于后续的开发
 
 
 
@@ -75,8 +75,29 @@ public:
 
 void test()
 {
+    AbstractCalculator *zhizhen = new AddCalculator;
+    zhizhen->m_Num1 = 10;
+    zhizhen->m_Num2 = 20;
+    cout << zhizhen->m_Num1 << " + " << zhizhen->m_Num2 << " = " << zhizhen->getResult() << endl;
+    delete zhizhen;
 
+    zhizhen = new SubCalculator;
+    zhizhen->m_Num1 = 50;
+    zhizhen->m_Num2 = 20;
+    cout << zhizhen->m_Num1 << " - " << zhizhen->m_Num2 << " = " << zhizhen->getResult() << endl;
+    delete zhizhen;
 
+    zhizhen = new ChengCalculator;
+    zhizhen->m_Num1 = 1.5;
+    zhizhen->m_Num2 = 20;
+    cout << zhizhen->m_Num1 << " * " << zhizhen->m_Num2 << " = " << zhizhen->getResult() << endl;
+    delete zhizhen;
+
+    zhizhen = new ChuCalculator;
+    zhizhen->m_Num1 = 600;
+    zhizhen->m_Num2 = 20;
+    cout << zhizhen->m_Num1 << " / " << zhizhen->m_Num2 << " = " << zhizhen->getResult() << endl;
+    delete zhizhen;
 
 }
 
