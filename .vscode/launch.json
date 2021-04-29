@@ -6,7 +6,10 @@
         "type": "cppdbg",
         "request": "launch",
         "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-        "args": [],
+        "args": [
+          "-I",
+          "lib\\include"
+        ],
         "stopAtEntry": false,
         "cwd": "${workspaceFolder}",
         "environment": [],
