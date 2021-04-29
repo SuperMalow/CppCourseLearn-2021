@@ -7,7 +7,7 @@
 #include <ctype.h> 
 
 #include <windows.h>
-#include <ctime>
+#include <time.h>
 
 #define BUFFSIZE 32
 #define COL 128
