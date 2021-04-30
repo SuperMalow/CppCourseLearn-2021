@@ -50,7 +50,7 @@ public:
 
 MyInteger::MyInteger(/* args */)
 {
-    m_Num = 0;
+    m_Num = 1;
 }
 
 //重载左移运算符
@@ -66,7 +66,14 @@ void test()
 {
 
     MyInteger myint;
+    cout << "++myint = ++myint" << endl;
+    cout << (++myint = ++myint) << endl;
 
+
+    cout << "--myint = --myint" << endl;
+    cout << (--myint = --myint) << endl;
+
+    /*
     cout << myint << endl;
     cout << myint ++ << endl;
 
@@ -76,6 +83,7 @@ void test()
 
     cout << myint-- << endl;
     cout << --myint << endl;
+    */
      
 }
 
