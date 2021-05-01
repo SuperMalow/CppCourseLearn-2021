@@ -10,6 +10,7 @@
 #include "MainDlg.h"
 #include <shellapi.h>//有关系统托盘的头文件
 #define WM_HIDE WM_USER+100  
+
 							//定制自己的消息ID。
 							//为了防止用户定义的消息ID与系统的消息ID冲突
 							//MS（Microsoft）定义了一个宏WM_USER，小于WM_USER的ID被系统使用，大于WM_USER的ID被用户使用。 
