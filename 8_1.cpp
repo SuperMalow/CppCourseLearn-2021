@@ -71,21 +71,21 @@ void Clock::showTime() const
 int main()
 {
     Clock z1(23,59,59);
-    cout << "一开始的时间:" << endl;
+    cout << "一开始的时间:" ;
     z1.showTime();
 
-    cout << "进行后置 ++ " << endl;
-    z1 ++ ;
-    z1.showTime();
+    cout << "进行后置 ++   " ;
+    (z1 ++).showTime() ;
+    //z1.showTime();
 
 
-    cout << "进行前置 ++ "<< endl;
-    ++ z1;
-    
+    cout << "进行前置 ++   ";
+    (++ z1).showTime();
+    //z1.showTime();
 
-    cout << "进行 ++ i = ++ i "<< endl;
-    ++z1 = ++z1; 
-    z1.showTime();
+    cout << "进行 ++ i = ++ i   ";
+    (++z1 = ++z1).showTime(); 
+    //z1.showTime();
 
     system("pause");
     return 0;
