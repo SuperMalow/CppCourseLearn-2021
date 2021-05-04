@@ -78,7 +78,6 @@ int main()
     (z1 ++).showTime() ;
     //z1.showTime();
 
-
     cout << "½øÐÐÇ°ÖÃ ++   ";
     (++ z1).showTime();
     //z1.showTime();
