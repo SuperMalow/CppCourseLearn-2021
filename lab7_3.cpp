@@ -94,10 +94,31 @@ motorcar::~motorcar()
     cout << "motorcar的析构函数" << endl;
 }
 
+class motorcycle:public virtual bicycle,public virtual motorcar
+{
+private:
+    /* data */
+public:
+    motorcycle(/* args */);
+    ~motorcycle();
+};
+
+motorcycle::motorcycle(/* args */)
+{
+    cout << "motorcycle的构造函数" << endl;
+}
+
+motorcycle::~motorcycle()
+{
+    cout << "motorcycle的析构函数" << endl;
+}
+
+
 void test01()
 {
     bicycle b;
     motorcar m;
+    motorcycle mc;
     cout << "bicycle: " << endl;
     b.setHeight(2);
     b.setWeight(1);
@@ -110,6 +131,14 @@ void test01()
     m.Run();
     m.setMaxSpeed(220);
     m.Stop();
+    cout << "motorcycle: " << endl;
+    mc.setHeight(2);
+    mc.setSeatNum(2);
+    mc.setWeight(1);
+    mc.Run();
+    mc.setMaxSpeed(200);
+    mc.Stop();
+
 }
 
 
