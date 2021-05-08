@@ -44,10 +44,7 @@ DerivedClass::~DerivedClass()
 void test01()
 {
     DerivedClass dc;
-    
-
 }
-
 
 
 
