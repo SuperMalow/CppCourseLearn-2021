@@ -10,11 +10,11 @@ private:
 public:
     vehicle(/* args */);
     ~vehicle();
-    void Run()
+    virtual void Run()
     {
         cout << "vehile正在行驶中" << endl;
     }
-    void Stop()
+    virtual void Stop()
     {
         cout << "vehile正在停止" << endl;
     }
@@ -30,7 +30,6 @@ vehicle::~vehicle()
     cout << "vehicle的析构函数" << endl;
 }
 
-
 class bicycle:public vehicle
 {
 private:
@@ -38,6 +37,14 @@ private:
 public:
     bicycle(/* args */);
     ~bicycle();
+    virtual void Run()
+    {
+        cout << "bicycle正在行驶中" << endl;
+    }
+    virtual void Stop()
+    {
+        cout << "bicycle正在停止" << endl;
+    }
 };
 
 bicycle::bicycle(/* args */)
@@ -58,6 +65,14 @@ private:
 public:
     motorcar(/* args */);
     ~motorcar();
+    virtual void Run()
+    {
+        cout << "motorcar正在行驶中" << endl;
+    }
+    virtual void Stop()
+    {
+        cout << "motorcar正在停止" << endl;
+    }
 };
 
 motorcar::motorcar(/* args */)
@@ -70,7 +85,6 @@ motorcar::~motorcar()
     cout << "motorcar析构函数" << endl;
 }
 
-
 class motorcycle:public bicycle,public motorcar
 {
 private:
@@ -78,6 +92,14 @@ private:
 public:
     motorcycle(/* args */);
     ~motorcycle();
+    virtual void Run()
+    {
+        cout << "motorcycle正在行驶中" << endl;
+    }
+    virtual void Stop()
+    {
+        cout << "motorcycle正在停止" << endl;
+    }
 };
 
 motorcycle::motorcycle(/* args */)
@@ -93,22 +115,34 @@ motorcycle::~motorcycle()
 
 void test01()
 {
-    vehicle v;
+    //vehicle v;
+    vehicle *p;
     bicycle b;
     motorcar m;
     motorcycle mc;
+    
+    // v.Run();
+    // v.Stop();
 
-    v.Run();
-    v.Stop();
+    // b.Run();
+    // b.Stop();
 
-    b.Run();
-    b.Stop();
-
-    m.Run();
-    m.Stop();
+    // m.Run();
+    // m.Stop();
+    
 
     //mc.Run();               //会报错
     //mc.Stop();              //会报错
+
+    *p = b;
+    p->Run();
+    p->Stop();
+    
+    *p = m;
+    p->Run();
+    p->Stop();
+
+    //*p = mc;                    //会报错
 
 }
 
