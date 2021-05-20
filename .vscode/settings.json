@@ -6,7 +6,8 @@
         "ostream": "cpp",
         "random": "cpp",
         "algorithm": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "fstream": "cpp"
     },
 
     "C_Cpp.clang_format_sortIncludes": true
