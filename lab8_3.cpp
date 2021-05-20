@@ -80,7 +80,7 @@ public:
     //按照 编号 姓名 年龄 生日 身份号来存储
     void saveInfor()
     {
-        ofstream ofs("data.txt",ios::out);      //写入数据
+        ofstream ofs("data.txt",ios::app);      //写入数据
         if (!ofs.is_open())
         {
             cout << "打开文件失败！" << endl;
@@ -170,9 +170,6 @@ void test01()
     cout << " p == p2 :  " << bool(p == p2) << endl;
     cout << " p == p1 :  " << bool(p == p1) << endl;
 }
-
-
-
 
 int main()
 {
